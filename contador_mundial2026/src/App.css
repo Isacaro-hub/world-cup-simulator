@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +39,113 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.parraf {
+  color: aqua;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 50px;
+ }
+
+.parraf:hover {
+   filter: drop-shadow(0 0 2em #ff0000aa);
+} */
+
+:root {
+  --bg-card: #ffffff;
+  --card-border: #ccc;
+  --card-radius: 30px;
+  --card-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --primary: #007bff;
+  --primary-dark: #0056b3;
+  --text: #222;
+  --text-muted: #555;
+  --button-radius: 20px;
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 30px;
+}
+
+.card {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-card);
+  border: 1px solid var(--card-border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: var(--spacing-md);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.6s ease;
+  width: min(360px, calc(100vw - 40px));
+}
+
+.card-body {
+  padding: var(--spacing-md);
+  margin: 0;
+ }
+
+.card-title {
+   font-weight: bold;
+   color: rebeccapurple;
+   font-size: 20px;
+}
+
+.card-text {
+  font-size: 16px;
+  }
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0 var(--spacing-lg);
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.2;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+.btn-primary:focus-visible {
+  outline: 3px solid rgba(0, 123, 255, 0.5);
+  outline-offset: 3px;
+}
+
+.btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary,
+  .card {
+    transition: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .card {
+    position: static;
+    margin: var(--spacing-sm);
+    width: auto;
+  }
+
+  .card-body {
+    padding: var(--spacing-sm);
+  }
 }
