@@ -4,6 +4,8 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
+  background-color: #e2d7d7;
+    border-radius: 10px;
 }
 
 .team-flag{
@@ -13,12 +15,37 @@
 }
 
 .score-input{
-    width: 20px;
+    width: 25px;
+    height: 23px;
     margin: 0 10px;
-    border-radius: 5px;
+    border-radius: 6px;
+    background-color: #272525;
+    border: 3px solid #7c3aed;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
 }
 
 .team-name{
     font-size: 18px;
     font-family: 'Arial', sans-serif;
+    color: #ffffff;
+}
+
+/* Chrome, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input::-webkit-input-placeholder {
+  -webkit-appearance: none;
+  margin: 0;
+  color: transparent;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }

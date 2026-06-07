@@ -7,4 +7,13 @@ export const teams = {
         name: 'Sudafrica',
         flag: "flags/sudafrica.png"
     },
+    corea: {
+        name: 'Corea',
+        flag: "flags/corea.png"
+    },
+    chequia: {
+        name: 'Chequia',
+        flag: "flags/chequia.png"
+    }
+    
 }
