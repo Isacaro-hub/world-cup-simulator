@@ -2,6 +2,7 @@ body{
     background-color: #1a1919;
     margin: 0;
     padding: 0;
+    font-family: 'Arial', sans-serif;
 }
 
 * {
@@ -13,16 +14,25 @@ body{
 .layout {
   display: grid;
   grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr;
   min-height: 100vh;
 }
 
 .sidebar {
   padding: 15px;
-  background-color: #272525;
+  background-color: #1f1f1f;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
 }
 
 .content {
-  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  align-items: start;
+  border-radius: 10px;
+  grid-column: 2 / 3;
+  padding: 16px;
+  gap: 16px;
 }
 
 .group-menu {
@@ -36,21 +46,88 @@ body{
   padding: 10px;
   cursor: pointer;
   background-color: transparent;
-  border: 2px solid #ffffff;
   color:white;
   font-family: 'Arial', sans-serif;
   border-radius: 15px;
   transition: background-color 0.3s, color 0.3s;
 }
 
-.content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #272525;
-    width: 400px;
-    height: 80px;
-    border-radius: 10px;
-    margin: 20px;
-    align-items: center;
+/* MEDIA QUERIES - TABLET (768px) */
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  
+  .sidebar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding: 10px;
+  }
+  
+  .content {
+    grid-column: 1 / 2;
+    grid-template-columns: 1fr;
+    padding: 12px;
+    gap: 12px;
+  }
+}
+
+/* MEDIA QUERIES - MOBILE (480px) */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  
+  .sidebar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding: 8px;
+    background-color: #1f1f1f;
+  }
+  
+  .content {
+    grid-column: 1 / 2;
+    grid-template-columns: 1fr;
+    padding: 8px;
+    gap: 10px;
+  }
+  
+  .group-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .group-button {
+    padding: 8px;
+    font-size: 12px;
+    flex: 1 1 48%;
+  }
+}
+
+/* MEDIA QUERIES - SMALL MOBILE (320px) */
+@media (max-width: 480px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar {
+    padding: 6px;
+  }
+  
+  .content {
+    padding: 6px;
+    gap: 8px;
+  }
+  
+  .group-menu {
+    gap: 6px;
+  }
+  
+  .group-button {
+    padding: 6px;
+    font-size: 11px;
+  }
 }
