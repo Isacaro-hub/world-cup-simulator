@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import "../styles/menu.css";
 
-function GroupMenu() {
+function GroupMenu({ activeGroup, onSelectGroup }: { activeGroup: string; onSelectGroup: (group: string) => void }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -12,7 +12,7 @@ function GroupMenu() {
         className={`menu-button ${open ? "active" : ""}`}
         onClick={() => setOpen(!open)}
       >
-        <span>Grupos</span>
+        <span>{activeGroup ? `Grupo ${activeGroup}` : "Grupos"}</span>
 
         <FaChevronDown
           className={`arrow ${open ? "rotate" : ""}`}
@@ -21,10 +21,10 @@ function GroupMenu() {
 
       {open && (
         <div className="submenu">
-          <button className="group-button">Grupo A</button>
-          <button className="group-button">Grupo B</button>
-          <button className="group-button">Grupo C</button>
-          <button className="group-button">Grupo D</button>
+          <button className="group-button" onClick={() => { onSelectGroup("A"); setOpen(false); }}>Grupo A</button>
+          <button className="group-button" onClick={() => { onSelectGroup("B"); setOpen(false); }}>Grupo B</button>
+          <button className="group-button" onClick={() => { onSelectGroup("C"); setOpen(false); }}>Grupo C</button>
+          <button className="group-button" onClick={() => { onSelectGroup("D"); setOpen(false); }}>Grupo D</button>
         </div>
       )}
 

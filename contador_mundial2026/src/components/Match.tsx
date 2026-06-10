@@ -5,13 +5,18 @@ type Team = {
   flag: string;
 };
 
+type ScoreField = "team1Goals" | "team2Goals";
+
 type MatchProps = {
   team1: Team;
   team2: Team;
   date: string;
+  team1Goals: string;
+  team2Goals: string;
+  onScoreChange: (field: ScoreField, value: string) => void;
 };
 
-function Match({team1, team2, date}: MatchProps) {
+function Match({ team1, team2, date, team1Goals, team2Goals, onScoreChange }: MatchProps) {
     return (
          <>
       <div className="match-wrapper">
@@ -36,13 +41,16 @@ function Match({team1, team2, date}: MatchProps) {
                 <div className="score-container">
                     <input
                         className="score-input"
-                        type="number" 
+                        type="number"
+                        value={team1Goals}
+                        onChange={(e) => onScoreChange("team1Goals", e.target.value)}
                     />
 
                     <input
                         className="score-input"
-                        type="number" 
-                        
+                        type="number"
+                        value={team2Goals}
+                        onChange={(e) => onScoreChange("team2Goals", e.target.value)}
                     />
                     </div>
 
