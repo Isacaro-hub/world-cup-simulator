@@ -2,6 +2,7 @@ import { teams } from "../data/teams";
 import "../styles/Tables.css";
 
 function StandingsTable() {
+    
     return (
         <div className="standings-table">
             <table> 

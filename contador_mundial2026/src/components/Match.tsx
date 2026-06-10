@@ -36,13 +36,15 @@ function Match({team1, team2, date}: MatchProps) {
                 <div className="score-container">
                     <input
                         className="score-input"
-                        type="number" />
+                        type="number" 
+                    />
 
                     <input
                         className="score-input"
-                        type="number" />
-
-                </div>
+                        type="number" 
+                        
+                    />
+                    </div>
 
                 <div className="team-info">
                     <span
@@ -56,9 +58,9 @@ function Match({team1, team2, date}: MatchProps) {
                         alt={team2.name} />
                 </div>
             </div>
-            </div>
-            </>
-    )
+        </div>
+    </>
+)
 }
 
 export default Match;
